@@ -1,36 +1,7 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
-import { keyframes } from "styled-components";
-
 import { ButtonProps } from "./Button.types";
 
-const SVGStrokeAnimation = keyframes`
-0% {
-    stroke-dashoffset: 0;
-  }
-
-  100% {
-    stroke-dashoffset: 1200;
-  }
-`;
-
-const GlowAnimation = keyframes`
-0% {
-    box-shadow: 0px 0px 10px 2px rgba(10, 10, 10, 0.8);
-  }
-  10% {
-    box-shadow: 0px 0px 10px 2px rgba(36, 104, 252, 0.8);
-  }
-  50% {
-    box-shadow: 0px 0px 20px 5px rgba(36, 166, 252, 0.8);
-  }
-  90% {
-    box-shadow: 0px 0px 10px 2px rgba(36, 104, 252, 0.8);
-  }
-  100% {
-    box-shadow: 0px 0px 10px 2px rgba(10, 10, 10, 0.8);
-  }
-`;
 
 const DefaultButton = styled.button<ButtonProps>`
   font-family: inherit;
@@ -185,7 +156,7 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
       onClick={(event) => {  
         onClick(event);
       }}
-      center={true}
+      center={props.center}
       size={props.size}
       colors={props.colors}
       disabled={props.disabled}

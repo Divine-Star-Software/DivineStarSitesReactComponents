@@ -49,3 +49,12 @@ Large.args = {
   children: "Large",
   colors: defaultColors,
 } as ButtonProps;
+
+export const NotCentered = Template.bind({});
+NotCentered.args = {
+  center: false,
+  size: "medium",
+  children: "Not Centered",
+  colors: defaultColors,
+} as ButtonProps;
+
