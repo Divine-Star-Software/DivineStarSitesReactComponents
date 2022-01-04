@@ -1,12 +1,13 @@
 {
   "name": "ds-sites-react-components",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Divine Star Sites React Components",
   "files": [
     "/dist"
   ],
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/cjs/index",
+  "typings": "dist/index",
+  "module": "dist/esm/index",
 
   "scripts": {
     "build": "rollup -c",
