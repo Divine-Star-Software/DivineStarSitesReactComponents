@@ -1,6 +1,6 @@
 {
   "name": "ds-sites-react-components",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Divine Star Sites React Components",
   "files": [
     "/dist"
@@ -8,18 +8,20 @@
   "main": "dist/cjs/index",
   "typings": "dist/index",
   "module": "dist/esm/index",
-
   "scripts": {
     "build": "rollup -c",
     "test": "react-scripts test --transformIgnorePatterns  --env=jsdom",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "repository": {"url": ""},
+  "repository": {
+    "url": ""
+  },
   "author": "Divine Star LLC",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
@@ -51,5 +53,7 @@
     "tslib": "^2.3.1",
     "typescript": "^4.5.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "babel-plugin-react-css-modules": "^5.2.6"
+  }
 }
