@@ -1,20 +1,22 @@
 {
   "name": "ds-sites-react-components",
-  "version": "0.0.1",
+  "version": "0.0.11",
   "description": "Divine Star Sites React Components",
   "files": [
     "/dist"
   ],
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+
   "scripts": {
     "build": "rollup -c",
     "test": "react-scripts test --transformIgnorePatterns  --env=jsdom",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {"url": ""},
+  "author": "Divine Star LLC",
+  "license": "MIT",
   "peerDependencies": {
     "react": "^17.0.2"
   },
