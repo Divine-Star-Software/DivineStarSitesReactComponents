@@ -9,7 +9,7 @@ Current Components
 - Buttons
     - Normal buttons with different sizes.
     - Fancy buttons with svg animations
-- Immages
+- Images
     - Single images with different sizes and types
 - Typography
     - Simple easy to use consistent styled text 

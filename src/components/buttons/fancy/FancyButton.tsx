@@ -10,7 +10,7 @@ const SVGStrokeAnimation = keyframes`
   }
 
   100% {
-    stroke-dashoffset: 1200;
+    stroke-dashoffset: 1250;
   }
 `;
 
@@ -154,6 +154,11 @@ const FancyButtonSVG = styled.svg<{
   fill: none;
   stroke-width: 2px;
   stroke-linecap: round;
+
+  stroke-dasharray: 125;
+  transition: 1s ease-out;
+  animation: ${SVGStrokeAnimation} 20s linear infinite;
+
   stroke: ${(props: any) => {
     if (props.strokeLocalColor) {
       return props.strokeLocalColor;
@@ -172,9 +177,6 @@ const FancyButtonSVG = styled.svg<{
       }
     }};
   }
-  stroke-dasharray: 120;
-  transition: 1s ease-out;
-  animation: ${SVGStrokeAnimation} 20s linear infinite;
 `;
 
 export const FancyButton: FC<FancyButtonProps> = (props: FancyButtonProps) => {
