@@ -56,4 +56,57 @@ declare type FancyButtonProps = {
 
 declare const FancyButton: FC<FancyButtonProps>;
 
-export { Button, FancyButton };
+declare type TypographyElementTypes = "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span";
+declare type TypographyProps = {
+    children: JSX.Element | JSX.Element[] | string;
+    type?: TypographyElementTypes;
+    className?: string;
+    center?: boolean;
+    color?: string;
+    align?: "left" | "right";
+};
+
+declare const Typography: FC<TypographyProps>;
+
+declare type ImageCompData = {
+    src: string;
+    webP?: boolean;
+    size?: "small" | "medium" | "large";
+    type?: "post" | "default";
+    alt?: string;
+    class?: string;
+    center?: boolean;
+    width?: string | number;
+    height?: string | number;
+    minHeight?: string | number;
+    maxHeight?: string | number;
+    minWidth?: string | number;
+    maxWidth?: string | number;
+};
+
+declare type ImageProps = {
+    clickAble?: boolean;
+    openInNewTabOnClick?: boolean;
+    src?: string;
+    alt?: string;
+    type?: string;
+    size?: string;
+    center?: boolean;
+    className?: string;
+    containerClassName?: string;
+    data?: ImageCompData;
+    webP?: boolean;
+    thumb?: boolean;
+    colors?: {
+        borderColor?: string;
+    };
+};
+
+/**# Image
+ * ---
+ * Custom image used for static site rendering.
+ * Suppourts souce sets for webp images.
+ */
+declare const Image: FC<ImageProps>;
+
+export { Button, FancyButton, Image, Typography };
