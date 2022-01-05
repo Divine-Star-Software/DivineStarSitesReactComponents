@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { TypographyProps, TypographyElementTypes } from "./Typography.types";
+import { TypographyProps } from "./Typography.types";
 
 const StyledH1 = styled.h1<TypographyProps>`
   color: ${(props) => {
@@ -277,8 +277,7 @@ const StyledPre = styled.pre<TypographyProps>`
 `;
 
 export const Typography: FC<TypographyProps> = (props: TypographyProps) => {
-  const elementType: TypographyElementTypes = props.type ? props.type : "p";
-  switch (elementType) {
+  switch (props.type) {
     case "span":
       return <StyledSpan {...props} />;
     case "p":
