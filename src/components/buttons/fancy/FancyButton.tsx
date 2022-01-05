@@ -47,6 +47,7 @@ const StyledFancyButton = styled.button<FancyButtonProps>`
       return "200px";
     }
   }};
+  
   height: ${(props) => {
     if (props.height) {
       return `${props.height}px`;
