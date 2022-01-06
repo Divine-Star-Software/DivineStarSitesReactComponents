@@ -1,8 +1,8 @@
 export declare type ImageCompData = {
     src: string;
     webP?: boolean;
-    size?: "small" | "medium" | "large";
-    type?: "post" | "default";
+    size?: ImageSizes;
+    type?: ImageTypes;
     alt?: string;
     class?: string;
     center?: boolean;
@@ -13,6 +13,8 @@ export declare type ImageCompData = {
     minWidth?: string | number;
     maxWidth?: string | number;
 };
+export declare type ImageTypes = "default" | "post";
+export declare type ImageSizes = "xsmall" | "small" | "medium" | "large" | "xlarge" | "hero" | "full";
 export declare type ImageGalleryData = {
     gallery: {
         popup?: boolean;

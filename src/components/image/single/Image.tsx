@@ -4,33 +4,57 @@ import { getFileExtension } from "../../util/getFileExtension";
 import { ImageProps } from "./Image.types";
 
 const StyledImage = styled.img<ImageProps>`
-  max-width: ${(props) => {
-    switch (props.size) {
-      case "small":
-        return "100px";
-      case "medium":
-        return "300px";
-      case "large":
-        return "800px";
-      default:
-        return "1000px";
+  ${(props) => {
+    if (!props.banner) {
+      let returnString = "max-width";
+      if (props.maxWidth) {
+        return (returnString += `:${props.maxWidth}px;`);
+      }
+      switch (props.size) {
+        case "xsmall":
+          returnString += ":50px;";
+          break;
+        case "small":
+          returnString += ":100px;";
+          break;
+        case "medium":
+          returnString += ":300px;";
+          break;
+        case "large":
+          returnString += ":800px;";
+          break;
+        case "xlarge":
+          returnString += ":1000px;";
+          break;
+        case "hero":
+          returnString += ":1200px;";
+          break;
+        case "full":
+          returnString += ":100%;";
+          break;
+        default:
+          returnString += ":200px;";
+          break;
+      }
+      return returnString;
     }
-  }};
+    return "";
+  }}
 
   width: ${(props) => {
-    if (props.type == "post") {
+    if (props.type == "post" || props.banner) {
       return "100%";
     }
     return "100%";
   }};
   height: ${(props) => {
-    if (props.type == "post") {
+    if (props.type == "post" || props.banner) {
       return "100%";
     }
     return "100%";
   }};
   object-fit: ${(props) => {
-    if (props.type == "post") {
+    if (props.type == "post" || props.banner) {
       return "cover";
     }
     return "contain";
@@ -80,7 +104,7 @@ const ImageWrap = styled.span<ImageProps>`
     return "100%";
   }};
   margin: ${(props) => {
-    if (props.center || props.type == "post") {
+    if (props.center || props.banner) {
       return "auto";
     }
     return "0";
@@ -91,6 +115,44 @@ const ImageWrap = styled.span<ImageProps>`
     }
     return "inherit";
   }};
+
+  ${(props) => {
+    if (props.banner) {
+      let returnString = "max-width";
+      if (props.maxWidth) {
+        return (returnString += `:${props.maxWidth}px;`);
+      }
+
+      switch (props.size) {
+        case "xsmall":
+          returnString += ":300px;";
+          break;
+        case "small":
+          returnString += ":500px;";
+          break;
+        case "medium":
+          returnString += ":800px;";
+          break;
+        case "large":
+          returnString += ":1000px;";
+          break;
+        case "xlarge":
+          returnString += ":1200px;";
+          break;
+        case "hero":
+          returnString += ":1400px;";
+          break;
+        case "full":
+          returnString += ":100%;";
+          break;
+        default:
+          returnString += ":1000px;";
+          break;
+      }
+      return returnString;
+    }
+    return "";
+  }}
 `;
 
 /**# Image
